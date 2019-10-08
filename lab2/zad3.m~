@@ -1,0 +1,15 @@
+clearvars;
+close all;
+clc;
+
+image = imread('parrot.bmp'); 
+figure(1);
+imshow(image);
+
+imagex2 = imresize(image, 2, 'nearest'); 
+figure(2);
+imshow(imagex2);
+
+imagex1_3 = imresize(image, 1.3); 
+figure(3);
+imshow(imagex1_3);
