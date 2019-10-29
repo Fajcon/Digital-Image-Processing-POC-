@@ -1,0 +1,14 @@
+clc;
+close all;
+clearvars;
+
+obraz = imread("bart.bmp");
+figure();
+subplot(1, 2, 1);
+imshow(obraz);
+subplot(1, 2, 2);
+imhist(obraz);
+progDolny = 188;
+progGorny = 208;
+
+obrazBW = obraz > progDolny & obraz 
