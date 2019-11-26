@@ -1,0 +1,41 @@
+close all;
+clearvars;
+clc;
+
+
+image = zeros(11,11);
+image(1,2) = 1;
+
+[H1,tehta1,rho1] = hough(image,'RhoResolution',0.1,'ThetaResolution',0.5);
+
+figure();
+subplot(1,2,1); imshow(image);
+subplot(1,2,2); imshow(H1,[]);
+
+%%
+image(10,3) = 1;
+
+[H2,tehta2,rho2] = hough(image,'RhoResolution',0.1,'ThetaResolution',0.5);
+
+figure();
+subplot(1,2,1); imshow(image);
+subplot(1,2,2); imshow(H2,[]);
+%%
+image(5,10) = 1;
+image(4,3) = 1;
+
+[H3,tehta3,rho3] = hough(image,'RhoResolution',0.1,'ThetaResolution',0.5);
+
+figure();
+subplot(1,2,1); imshow(image)
+subplot(1,2,2); imshow(H3,[]);
+%%
+rho1 = rho(115);
+theta1 = theta();
+x = 0:0.1:10;
+
+y = (rho1 - x*cosd(theta1)/sind(theta1));
+imshow(image);
+hold on;
+plot(x+1,y+1);
+hold off;

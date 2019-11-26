@@ -2,7 +2,7 @@ close all;
 clearvars;
 clc;
 %%
-
+••••••••
 image = imread('calculator.bmp');
 
 SE = ones(1,71);

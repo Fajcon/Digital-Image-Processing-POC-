@@ -66,9 +66,9 @@ subplot(1,2,1); imshow(image); title('oryginał');
 subplot(1,2,2); imshow(imageDilatated); title('dylatacja');
 
 %%
-image = imread('ertka.bmp');
+%image = imread('ertka.bmp');
 %image = imread('wyspa.bmp');
-%image = imread('kolka.bmp');
+image = imread('kolka.bmp');
 
 SE = strel('square',3);
 
