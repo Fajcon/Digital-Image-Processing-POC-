@@ -36,16 +36,13 @@ peaks = houghpeaks(H,8);
 imshow(H,[]);
 hold on;
 plot(peaks(:,2),peaks(:,1),'ro');
-
+hold off;
 %%
 figure();
 
 lines = houghlines(result,theta,rho,peaks);
 imshow(imread('lab112.png')); 
 hold on;
-
-%%przykładowy kod z pomocy houghlines
-
 
 
 max_len = 0;
@@ -76,15 +73,12 @@ peaks = houghpeaks(H,8);
 imshow(H,[]);
 hold on;
 plot(peaks(:,2),peaks(:,1),'ro');
+hold off;
 
 figure();
-
 lines = houghlines(result,theta,rho,peaks);
 imshow(imread('dom.png')); 
 hold on;
-
-%%przykładowy kod z pomocy houghlines
-
 
 
 max_len = 0;
