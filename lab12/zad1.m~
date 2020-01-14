@@ -1,0 +1,37 @@
+clearvars;
+close all;
+clc;
+
+%%
+%RGB to YUV
+
+RGB = imread('mglawica_kolor.png');
+R = RGB(:,:,1);
+G = RGB(:,:,2);
+B = RGB(:,:,3);
+Y = 0.299 * R + 0.587 * G + 0.114 * B;
+U = -0.1687 * R - 0.03313 * G + 0.5* B;
+V = 0.5 * R - 0.41487 * G - 0.813 * B;
+YUV = cat(3,Y,U,V);
+
+%%
+%Y, U and V to list of 8x8 matrix
+[k,l] = size(Y);
+arrayOf88YMatrixes = [];
+
+for i = 1:k:8
+    for j = 1:l:8
+       arrayOf88YMatrixes = [arrayOf88YMatrixes, Y(i:i+7,j:j+7)];
+    end
+end
+
+%%
+% unsigned integer to signed integer
+s = size(arrayOf88YMatrixes);
+for i = 1:sizeOfMyMatrixes
+    arrayOf88YMatrixes(i) = arrayOf88YMatrixes(i) - 128;
+end
+
+%%
+%Transform
+for i = = 1:sizeOfMyMatrixes 

@@ -65,7 +65,7 @@ imshow(nImage, []);
 %%
 [width, height] = size(image);
 
-mask = fspecial('gaussian', height, 50);
+mask = fspecial('gaussian', height, 20);
 grayMask = mat2gray(mask);
 
 filtredImage = image3.*grayMask;
